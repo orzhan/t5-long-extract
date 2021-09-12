@@ -1,0 +1,19 @@
+python  examples/pytorch/summarization/run_summarization.py \
+    --model_name_or_path t5-small \
+    --do_train \
+    --do_eval \
+    --train_file ../tr.csv \
+    --validation_file ../te.csv \
+    --output_dir tst-summarization \
+    --per_device_train_batch_size=1 \
+    --per_device_eval_batch_size=4 \
+    --overwrite_output_dir \
+    --predict_with_generate \
+    --max_source_length 4096 \
+    --max_target_length 512 \
+    --evaluation_strategy steps \
+    --eval_steps 1000 \
+    --save_steps 3000 \
+    --num_train_epochs 4 \
+    --warmup_ratio 0.1 \
+    --save_strategy steps 
