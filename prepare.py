@@ -83,7 +83,6 @@ for id in tqdm(ids[:]):
       brs.append(best_rating)
       if len(best_truth) > 100:
         data.append(['sum: ' + content[:content_cut_start].replace('\x00','').strip(), best_truth])
-        data_long.append(content)
         data_ids.append(id)
         
 data = pd.DataFrame(data)
